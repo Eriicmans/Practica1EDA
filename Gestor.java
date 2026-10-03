@@ -85,6 +85,7 @@ public class Gestor {
     public Actor buscarActor(String nombreActor){
         return actores.get(nombreActor);
     }
+
     public void insertarActor(Actor actor){
         if(actores.containsKey(actor.getNombre())){
             return;
@@ -102,6 +103,7 @@ public class Gestor {
     public void cambiarAnio(String nombrePeli, int nuevoAnio){
         peliculas.get(nombrePeli).setAnio(nuevoAnio);
     }
+
     public void borrarActor(String nombre){
         Actor actor = actores.get(nombre);
         for(Pelicula pelicula: actor.getPeliculas()){
@@ -116,7 +118,7 @@ public class Gestor {
                 fichero.println(actor.getNombre());
             }
         }catch(FileNotFoundException e){
-            System.out.println("fichero no se ha podido crear");
+            System.out.println("El fichero no se ha podido crear");
         }
     }
     public ArrayList<Actor> obtenerActoresOrdenados() {
