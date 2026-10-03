@@ -4,10 +4,10 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Catalogo catalogo = Catalogo.getCatalogo();
+        Gestor gestor = Gestor.getGestor();
 
         long inicio = System.nanoTime();
-        catalogo.cargarDatos();
+        gestor.cargarDatos();
         long ms = (System.nanoTime() - inicio) / 1_000_000;
         System.out.println("Se han cargado los datos en : " + ms + " ms");
 
@@ -33,7 +33,7 @@ public class Main {
                     case 1:
                         System.out.print("Introduzca el nombre que desea buscar: ");
                         nom = sc.nextLine();
-                        catalogo.buscarActorPorNombre(nom);
+                        gestor.buscarActor(nom);
                         break;
 
                     case 2:
@@ -44,12 +44,12 @@ public class Main {
                         // Buscar las películas de un actor
                         System.out.print("Introduzca el actor: ");
                         nom = sc.nextLine();
-                        catalogo.buscarPeliculasActor(nom);
+                        gestor.peliculasActor(nom);
                         break;
                     case 4:
                         System.out.print("Introduzca la pelicula: ");
                         nom = sc.nextLine();
-                        catalogo.buscarActoresPelicula(nom);
+                        gestor.actoresPelicula(nom);
                         break;
                     case 5:
                         // Modificar año de estreno de una película
@@ -57,14 +57,14 @@ public class Main {
                         nom = sc.nextLine();
                         System.out.print("Que año quiere poner? ");
                         int anio = Integer.parseInt(sc.nextLine());
-                        catalogo.cambiarAnioPelicula(nom, anio);
+                        gestor.cambiarAnio(nom, anio);
                         break;
 
                     case 6:
                         // Borrar un actor
                         System.out.print("Que actor desea eliminar? ");
                         nom = sc.nextLine();
-                        catalogo.eliminarActor(nom);
+                        gestor.borrarActor(nom);
                         break;
 
                     case 7:
@@ -83,7 +83,7 @@ public class Main {
                 System.out.println("Error: Debe ingresar un número entero válido.");
                 opcion = -1;
             }
-        System.out.println("Pulse 0 para abandonar");
+            System.out.println("Pulse 0 para abandonar");
         } while (opcion != 0);
     }
 }
