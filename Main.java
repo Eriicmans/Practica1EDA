@@ -36,9 +36,9 @@ public class Main {
                         System.out.print("Introduzca el nombre exacto que desea buscar: ");
                         nom = sc.nextLine();
                         long t1 = System.nanoTime();
-                        Actor actorBuscado = gestor.buscarActor(nom);
+                        Actor actor = gestor.buscarActor(nom);
                         long t1_fin = (System.nanoTime() - t1) / 1_000_000;
-                        if (actorBuscado != null) {
+                        if (actor != null) {
                             System.out.println("El actor '" + nom + "' existe. (Búsqueda en " + t1_fin + " ms)");
                         } else {
                             System.out.println("No se ha encontrado a '" + nom + "'.");
