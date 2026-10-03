@@ -13,14 +13,14 @@ public class Main {
 
         int opcion = -1;
         System.out.println("------------------- MENU -------------------");
-        System.out.println("1. Buscar actor por nombre completo");
-        System.out.println("2. Añadir actor");
-        System.out.println("3. Buscar las peliculas de un actor");
-        System.out.println("4. Buscar los actores de una pelicula");
-        System.out.println("5. Modificar año de estreno de unSa pelicula");
-        System.out.println("6. Borrar un actor");
-        System.out.println("7. Guardar datos");
-        System.out.println("8. Lista de actores ordenada por nombre");
+        System.out.println("1. Comprobar existencia de un actor por nombre completo");
+        System.out.println("2. Registrar nuevo actor");
+        System.out.println("3. Obtener las películas de un actor");
+        System.out.println("4. Obtener el reparto (actores) de una película");
+        System.out.println("5. Modificar año de estreno de una película");
+        System.out.println("6. Eliminar un actor del sistema");
+        System.out.println("7. Exportar datos a fichero");
+        System.out.println("8. Obtener lista de actores ordenada alfabéticamente");
 
 
         do {
@@ -68,7 +68,10 @@ public class Main {
                         break;
 
                     case 7:
-                        // Guardar datos
+                        System.out.print("Introduce el nombre del fichero para guardar los actores (ej: actores.txt): ");
+                        String nombreFichero = sc.nextLine();
+                        gestor.guardarActores(nombreFichero);
+                        System.out.println("Datos guardados correctamente en " + nombreFichero);
                         break;
 
                     case 8:
