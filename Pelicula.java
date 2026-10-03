@@ -1,41 +1,26 @@
 import java.util.ArrayList;
-
 public class Pelicula {
 
+    private String id;
     private String nombre;
-    private String idPelicula;
-    private ArrayList<Actor> listaActores;
     private int anio;
+    private ArrayList<Actor> actores;
 
-    public Pelicula(String nombre, String idPelicula, int anio) {
+    public Pelicula(String id, String nombre, int anio){
+        this.id = id;
         this.nombre = nombre;
-        this.idPelicula = idPelicula;
-        this.listaActores = new ArrayList<Actor>();
+        this.anio = anio;
+        this.actores = new ArrayList<>();
+    }
+    public void anadirActor(Actor actor){
+        actores.add(actor);
+    }
+    public ArrayList<Actor> getActores() {
+        return actores;}
+    public void setAnio(int anio){
         this.anio = anio;
     }
-
-    public void aniadirActor(Actor actor) {
-
-        listaActores.add(actor);
-    }
-
-    public String getNombre() {
-        return this.nombre;
-    }
-
-    public int getAnio() {
-        return this.anio;
-    }
-
-    public void imprimirActores() {
-        int cont = 0;
-        for (Actor actor : this.listaActores) {
-            cont++;
-            System.out.println(cont + ". " + actor.getNombre());
-        }
-    }
-
-    public void setAnio(int anio) {
-        this.anio = anio;
+    public void borrarActor(Actor actor){
+        actores.remove(actor);
     }
 }
