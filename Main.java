@@ -61,7 +61,7 @@ public class Main {
                         nom = sc.nextLine();
                         if (gestor.buscarActor(nom) != null) {
                             long t3 = System.nanoTime();
-                            ArrayList pelis = gestor.peliculasActor(nom);
+                            ArrayList<Pelicula> pelis = gestor.peliculasActor(nom);
                             long t3_fin = (System.nanoTime() - t3);
                             System.out.println("Operación completada en " + t3_fin + " ns. Se han devuelto " + pelis.size() + " películas.");
                         } else {
@@ -74,7 +74,7 @@ public class Main {
                         nom = sc.nextLine();
                         try {
                             long t4 = System.nanoTime();
-                            ArrayList reparto = gestor.actoresPelicula(nom);
+                            ArrayList<Actor> reparto = gestor.actoresPelicula(nom);
                             long t4_fin = (System.nanoTime() - t4);
                             if (reparto != null) {
                                 System.out.println("Operación completada en " + t4_fin + " ns. Se han devuelto " + reparto.size() + " actores.");
@@ -124,7 +124,7 @@ public class Main {
                     case 8:
                         System.out.println("Generando lista ordenada...");
                         long t8 = System.nanoTime();
-                        ArrayList listaOrdenada = gestor.obtenerActoresOrdenados();
+                        ArrayList<Actor> listaOrdenada = gestor.obtenerActoresOrdenados();
                         long t8_fin = (System.nanoTime() - t8) / 1_000_000;
                         System.out.println("Operación completada en " + t8_fin + " ms. Se ha devuelto la lista con " + listaOrdenada.size() + " elementos.");
                         break;
