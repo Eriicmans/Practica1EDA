@@ -77,7 +77,9 @@ public class Gestor {
                 }
                 actor.anadirPelicula(pelicula);
                 pelicula.anadirActor(actor);
-            }}
+            }
+            sc.close();
+        }
         catch(FileNotFoundException e){
             System.out.println("Fichero no encontrado");
         }
@@ -117,6 +119,7 @@ public class Gestor {
             for(Actor actor : actores.values()){
                 fichero.println(actor.getNombre());
             }
+            fichero.close();
         }catch(FileNotFoundException e){
             System.out.println("El fichero no se ha podido crear");
         }
